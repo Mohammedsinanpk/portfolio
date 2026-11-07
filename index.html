@@ -4,44 +4,174 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mohammed Sinan P K</title>
-  <meta name="description" content="Mohammed Sinan P K — AI/ML Engineer at Eduport.">
+  <meta name="description" content="AI/ML Engineer building production LLM systems: document AI, retrieval and structured generation.">
+  <meta property="og:title" content="Mohammed Sinan P K">
+  <meta property="og:description" content="AI/ML Engineer building production LLM systems: document AI, retrieval and structured generation.">
+  <meta property="og:url" content="https://sinanpk.in">
+  <link rel="canonical" href="https://sinanpk.in">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='%23111'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23fff'>s</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fafaf9;
-      --fg: #1c1917;
-      --muted: #78716c;
+      --bg: #fbfbfa;
+      --fg: #111110;
+      --muted: #6f6e69;
+      --faint: #b5b3ad;
+      --line: #ecebe8;
+      --hover: #f3f2ef;
     }
     @media (prefers-color-scheme: dark) {
-      :root { --bg: #0c0a09; --fg: #f5f5f4; --muted: #a8a29e; }
+      :root {
+        --bg: #0e0e0d;
+        --fg: #ededec;
+        --muted: #9a9993;
+        --faint: #5c5b57;
+        --line: #1f1f1d;
+        --hover: #171716;
+      }
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
     body {
       background: var(--bg);
       color: var(--fg);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      text-align: center;
+      font: 15px/1.65 "Inter", system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
+    a { color: inherit; text-decoration: none; }
+    main { max-width: 620px; margin: 0 auto; padding: 96px 20px 64px; }
+
+    /* Fade-in */
+    .reveal { opacity: 0; transform: translateY(8px); animation: in .7s cubic-bezier(.2,.7,.2,1) forwards; }
+    .reveal:nth-child(2) { animation-delay: .08s; }
+    .reveal:nth-child(3) { animation-delay: .16s; }
+    .reveal:nth-child(4) { animation-delay: .24s; }
+    .reveal:nth-child(5) { animation-delay: .32s; }
+    @keyframes in { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+
+    /* Hero */
     h1 {
-      font-size: clamp(2rem, 7vw, 3.5rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 8vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
     }
-    p {
-      margin-top: 0.75rem;
-      font-size: clamp(1rem, 3vw, 1.25rem);
-      color: var(--muted);
+    h1 em { color: var(--muted); }
+    .lede { margin-top: 20px; color: var(--muted); font-size: 1.05rem; max-width: 46ch; }
+    .lede b { color: var(--fg); font-weight: 500; }
+    .social { margin-top: 24px; display: flex; gap: 18px; font-size: 0.92rem; }
+    .social a { color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: color .2s, border-color .2s; }
+    .social a:hover { color: var(--fg); border-color: var(--fg); }
+
+    /* Sections */
+    section { margin-top: 72px; }
+    h2 { font-size: 0.8rem; font-weight: 500; color: var(--faint); margin-bottom: 14px; letter-spacing: 0.02em; }
+
+    /* Project rows */
+    .row {
+      display: block;
+      margin: 0 -14px;
+      padding: 14px;
+      border-radius: 12px;
+      transition: background .2s;
     }
+    .row:hover { background: var(--hover); }
+    .row-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+    .row h3 { font-size: 1rem; font-weight: 500; }
+    .row .meta { color: var(--faint); font-size: 0.85rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .row p { color: var(--muted); margin-top: 2px; }
+    .stat {
+      display: inline-block; margin-top: 10px; margin-right: 6px;
+      font-size: 0.78rem; color: var(--muted);
+      border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px;
+    }
+
+    /* Timeline */
+    .tl { list-style: none; }
+    .tl li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .tl li:first-child { border-top: 0; }
+    .tl .when { color: var(--faint); font-size: 0.88rem; font-variant-numeric: tabular-nums; padding-top: 1px; }
+    .tl .what { font-weight: 500; }
+    .tl .what span { color: var(--muted); font-weight: 400; }
+    @media (max-width: 480px) { .tl li { grid-template-columns: 1fr; gap: 0; } }
+
+    .stack { color: var(--muted); }
+
+    .contact p { color: var(--muted); }
+    .contact a.mail {
+      display: inline-block; margin-top: 10px;
+      font-family: "Instrument Serif", Georgia, serif; font-size: 1.6rem;
+      border-bottom: 1px solid var(--faint); transition: border-color .2s;
+    }
+    .contact a.mail:hover { border-color: var(--fg); }
+
+    footer { margin-top: 96px; color: var(--faint); font-size: 0.8rem; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Mohammed Sinan P K</h1>
-    <p>AI/ML Engineer at Eduport</p>
+
+    <header class="reveal">
+      <h1>Mohammed Sinan P K</h1>
+      <p class="lede">
+        <b>AI/ML Engineer.</b> I build production LLM systems for document AI, retrieval
+        and structured generation, with a focus on evals and cost. Currently at Eduport.
+      </p>
+      <nav class="social">
+        <a href="mailto:mohammedsinanpk12@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/sinan-p-k" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Mohammedsinanpk" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="reveal">
+      <h2>Selected work</h2>
+
+      <div class="row">
+        <div class="row-top"><h3>AI Tutor Platform</h3><span class="meta">Eduport</span></div>
+        <p>Production conversational AI: multimodal chat, memory per session, multilingual search over video and text, and diagrams generated during answers.</p>
+        <span class="stat">Recall@10: 9% → 80%</span>
+        <span class="stat">+20% multi-turn accuracy</span>
+      </div>
+
+      <div class="row">
+        <div class="row-top"><h3>Handwritten Document Grading</h3><span class="meta">Eduport</span></div>
+        <p>An OCR + LLM pipeline that scores handwritten answers in two languages and links every mark to its evidence.</p>
+        <span class="stat">~88% agreement with teachers</span>
+      </div>
+
+      <div class="row">
+        <div class="row-top"><h3>Edu-Diagrams</h3><span class="meta">Eduport</span></div>
+        <p>Diagrams planned by an LLM and drawn by code, which refuse what they can't draw instead of faking it.</p>
+        <span class="stat">Live in production</span>
+      </div>
+      <!-- Personal projects: copy a .row above -->
+    </section>
+
+    <section class="reveal">
+      <h2>Experience</h2>
+      <ul class="tl">
+        <li><span class="when">2025 — Now</span><span class="what">AI/ML Engineer <span>· Eduport</span></span></li>
+        <li><span class="when">2024</span><span class="what">AI Intern <span>· Reap Studio</span></span></li>
+        <li><span class="when">2020 — 2025</span><span class="what">B.Tech + M.Tech <span>· IIT Kharagpur</span></span></li>
+      </ul>
+    </section>
+
+    <section class="reveal">
+      <h2>Stack</h2>
+      <p class="stack">LLM evals, RAG, document AI, multimodal · Python, TypeScript, FastAPI, React, Celery, Redis, MongoDB, Docker</p>
+    </section>
+
+    <section class="reveal contact">
+      <h2>Contact</h2>
+      <p>Always happy to talk about applied AI.</p>
+      <a class="mail" href="mailto:mohammedsinanpk12@gmail.com">mohammedsinanpk12@gmail.com</a>
+    </section>
+
+    <footer>© 2026 Sinan P K</footer>
   </main>
 </body>
 </html>
