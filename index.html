@@ -20,7 +20,7 @@
     "jobTitle": "AI/ML Engineer",
     "worksFor": { "@type": "Organization", "name": "Eduport" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Kharagpur" },
-    "knowsAbout": ["Large language models", "LLM evaluation", "Retrieval-augmented generation", "Document AI", "Multimodal AI"],
+    "knowsAbout": ["Large language models", "LLM evaluation", "Retrieval-augmented generation", "Fine-tuning", "Document AI", "Multimodal AI", "PyTorch"],
     "sameAs": [
       "https://www.linkedin.com/in/sinan-p-k",
       "https://github.com/Mohammedsinanpk"
@@ -116,7 +116,11 @@
     .tl .what span { color: var(--muted); font-weight: 400; }
     @media (max-width: 480px) { .tl li { grid-template-columns: 1fr; gap: 0; } }
 
-    .stack { color: var(--muted); }
+    .stack div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 9px 0; border-top: 1px solid var(--line); }
+    .stack div:first-child { border-top: 0; }
+    .stack dt { color: var(--faint); font-size: 0.88rem; padding-top: 1px; }
+    .stack dd { color: var(--muted); }
+    @media (max-width: 480px) { .stack div { grid-template-columns: 1fr; gap: 0; } }
 
     .contact p { color: var(--muted); }
     .contact a.mail {
@@ -180,7 +184,15 @@
 
     <section class="reveal">
       <h2>Stack</h2>
-      <p class="stack">LLM evals, RAG, document AI, multimodal · Python, TypeScript, FastAPI, React, Celery, Redis, MongoDB, Docker</p>
+      <dl class="stack">
+        <div><dt>LLMs</dt><dd>Gemini, OpenAI, RAG, structured outputs, Batch APIs, prompt caching, LLM-as-judge evals</dd></div>
+        <div><dt>Fine-tuning</dt><dd>PyTorch, Hugging Face Transformers, Unsloth, TRL, LoRA / QLoRA, vLLM, SGLang</dd></div>
+        <div><dt>Retrieval</dt><dd>Embeddings (bge-m3), rerankers, ChromaDB, BM25, sentence-transformers</dd></div>
+        <div><dt>Vision &amp; speech</dt><dd>Vision-language models (Qwen-VL), PaddleOCR, faster-whisper</dd></div>
+        <div><dt>Backend</dt><dd>Python, FastAPI, Celery, Redis, MongoDB, PostgreSQL</dd></div>
+        <div><dt>Infra &amp; MLOps</dt><dd>Docker, Modal, GCP Vertex AI, Cloudflare, Sentry, PostHog, W&amp;B, Locust</dd></div>
+        <div><dt>Frontend</dt><dd>TypeScript, React, Vite, Tailwind</dd></div>
+      </dl>
     </section>
 
     <section class="reveal contact">
